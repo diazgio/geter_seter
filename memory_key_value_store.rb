@@ -16,6 +16,6 @@ class MemoryKeyValueStore
   def keys(pattern = nil)
     return @store.keys unless pattern
     regex = Regexp.new(pattern)
-    @store.keys.select { |key| key.match(pattern) }
+    @store.keys.select { |key| key.match(regex) }
   end
 end
